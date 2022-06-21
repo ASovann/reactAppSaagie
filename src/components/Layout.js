@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from "react"
 import { makeStyles } from '@material-ui/core'
 import { useHistory, useLocation } from 'react-router-dom'
 import { AddCircleOutlineOutlined, SubjectOutlined } from '@material-ui/icons'
@@ -20,6 +21,9 @@ import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Avatar from '@material-ui/core/Avatar'
+
+import LoadingComponent from "./LoadingComponent";
+import ErrorComponent from "./ErrorComponent";
 
 const drawerWidth = 240
 
@@ -83,6 +87,11 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 }));
 
 export default function Layout({ children }) {
+
+  const [loading, setLoading] = useState(true)
+  const [erroring, setErroring] = useState(true)
+  
+  
   const theme = useTheme()
   const classes = useStyles()
   const history = useHistory()
@@ -109,6 +118,12 @@ export default function Layout({ children }) {
       path: '/create' 
     },
   ];
+
+  setTimeout(() => {setLoading(false)}, 1000)
+  // Display "Loading.. " message to the screen while waiting for the api return to load
+  if (loading) return <LoadingComponent/>
+  if (erroring) return <ErrorComponent />
+  // if (erroring) return <ErrorComponent errMess={errMess} />
 
   return (
     <Box sx={{ display: 'flex' }}>

@@ -1,22 +1,6 @@
 {
   "notes": [
     {
-      "id": "dc8bef98-e177-4ea6-bbc0-de7b55942a28",
-      "name": "test",
-      "creator": "estiam_g03_cristian.tirche",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took.",
-      "jobsCount": 0,
-      "status": "READY"
-    },
-    {
-      "id": "dc8bef98-e177-4ea6-bbc0-de7b55942a27",
-      "name": "test",
-      "creator": "estiam_g03_cristian.tirche",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took.",
-      "jobsCount": 0,
-      "status": "READY"
-    },
-    {
       "id": "dc8bef98-e177-4ea6-bbc0-de7b55942a21",
       "name": "test",
       "creator": "estiam_g03_cristian.tirche",

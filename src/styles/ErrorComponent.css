@@ -1,0 +1,38 @@
+
+
+.errorContainer {
+    padding: 4px;
+    border: 0px solid rgb(247, 255, 136);
+}
+
+.errorContainer .errorBorder {
+    padding: 4px;
+    border: 0px solid #fff;
+}
+.errorContainer .errorBorder .errorSymbol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    padding: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+
+    text-align: center;
+    font-family: monospace;
+    font-size: 40px;
+    font-weight: lighter;
+}
+.errorContainer .errorMess {
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    padding: 8px 4px;
+    border: 0px solid #fff;
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: lighter;
+}
