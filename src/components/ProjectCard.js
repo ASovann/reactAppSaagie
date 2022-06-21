@@ -8,6 +8,7 @@ import DeleteOutlined from '@material-ui/icons/DeleteOutlined'
 import { makeStyles } from '@material-ui/core'
 import Avatar from '@material-ui/core/Avatar'
 import { yellow, green, pink, blue } from '@material-ui/core/colors'
+import Box from '@mui/material/Box';
 
 const useStyles = makeStyles({
   avatar: {
@@ -30,13 +31,13 @@ const useStyles = makeStyles({
   cardHeaderSubheader:{
     fontSize:"13px",
     color: (note) => {
-      if (note.category === 'work') {
+      if (note.creator === 'work') {
         return yellow[700]
       }
-      if (note.category === 'money') {
+      if (note.creator === 'money') {
         return green[500]
       }
-      if (note.category === 'todos') {
+      if (note.creator === 'todos') {
         return pink[500]
       }
       return blue[500]
@@ -44,6 +45,20 @@ const useStyles = makeStyles({
   },
   cardHeaderTitle:{
     fontWeight:"Bold"
+  },
+  cardFooter:{
+    display:"flex",
+    flexDirection:"row",
+    justifyContent:"space-between",
+    marginTop:10,
+  },
+  jobText:{
+    
+    fontSize:13
+  },
+  statusText:{
+    
+    fontSize:14
   }
 
 })
@@ -72,6 +87,10 @@ export default function ProjectCard({ note, handleDelete }) {
           <Typography variant="body2" color="textSecondary">
             { note.description }
           </Typography>
+          <Box className={classes.cardFooter}>
+            <Typography className={classes.jobText}>Jobs: { note.jobsCount }</Typography>
+            <Typography className={classes.statusText}>Status: { note.status }</Typography>
+          </Box>
         </CardContent>
       </Card>
     </div>
