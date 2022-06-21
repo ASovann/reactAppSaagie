@@ -17,7 +17,6 @@ import { Menu } from '@material-ui/icons'
 import { ChevronLeft } from '@material-ui/icons'
 import { ChevronRight } from '@material-ui/icons'
 import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Avatar from '@material-ui/core/Avatar'
@@ -26,39 +25,12 @@ const drawerWidth = 240
 
 const useStyles = makeStyles((theme) => {
   return {
-    page: {
-      background: '#f9f9f9',
-      width: '100%',
-      padding: theme.spacing(3),
-    },
-    root: {
-      display: 'flex',
-      flex:1,
-      flexDirection:"column"
-    },
-    drawer: {
-      width: drawerWidth
-    },
-    drawerPaper: {
-      width: drawerWidth,
-    },
-    active: {
-      background: '#f4f4f4'
-    },
     title: {
       padding: theme.spacing(2),
-    },
-    appBar: {
-      width: `calc(100% - ${drawerWidth}px)`,
-      marginRight:"30px",
-      marginTop:"20px",
-      borderRadius:16,
-      backgroundColor:"white",
     },
     date: {
       flexGrow: 1
     },
-    toolbar: theme.mixins.toolbar,
     avatar: {
       marginLeft: theme.spacing(2)
     }
@@ -106,7 +78,6 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
   ...theme.mixins.toolbar,
   justifyContent: 'flex-end',
 }));
