@@ -9,11 +9,15 @@ const useStyles = makeStyles({
     flexDirection:"column",
   },
   wrapper:{
-    display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)"
+    display: "flex",
+    flexDirection:"row",
+    flexWrap:"wrap",
+    alignContent:"space-around",
+    justifyContent:"space-between"
   },
   card:{
-    margin:20
+    margin:20,
+    maxWidth:"360px"
   }
 
 })
