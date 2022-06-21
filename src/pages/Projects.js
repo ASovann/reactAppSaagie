@@ -9,13 +9,10 @@ const useStyles = makeStyles({
     flexDirection:"column"
   },
   wrapper:{
-    flex:1,
-    display: "flex",
-    flexWrap: "wrap",
-    flexDirection:"row"
+    display: "grid",
+    gridTemplateColumns: "repeat(3, 1fr)"
   },
   card:{
-    width:500,
     margin:20
   }
 
