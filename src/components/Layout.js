@@ -1,16 +1,25 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core'
-import Drawer from '@material-ui/core/Drawer'
-import Typography from '@material-ui/core/Typography'
 import { useHistory, useLocation } from 'react-router-dom'
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemIcon from '@material-ui/core/ListItemIcon'
-import ListItemText from '@material-ui/core/ListItemText'
 import { AddCircleOutlineOutlined, SubjectOutlined } from '@material-ui/icons'
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
 import { format } from 'date-fns'
+import { styled, useTheme } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Drawer from '@mui/material/Drawer';
+import CssBaseline from '@mui/material/CssBaseline';
+import MuiAppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import List from '@mui/material/List';
+import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
+import { Menu } from '@material-ui/icons'
+import { ChevronLeft } from '@material-ui/icons'
+import { ChevronRight } from '@material-ui/icons'
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
 import Avatar from '@material-ui/core/Avatar'
 
 const drawerWidth = 240
@@ -24,9 +33,11 @@ const useStyles = makeStyles((theme) => {
     },
     root: {
       display: 'flex',
+      flex:1,
+      flexDirection:"column"
     },
     drawer: {
-      width: drawerWidth,
+      width: drawerWidth
     },
     drawerPaper: {
       width: drawerWidth,
@@ -39,7 +50,10 @@ const useStyles = makeStyles((theme) => {
     },
     appBar: {
       width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: drawerWidth,
+      marginRight:"30px",
+      marginTop:"20px",
+      borderRadius:16,
+      backgroundColor:"white",
     },
     date: {
       flexGrow: 1
@@ -51,10 +65,66 @@ const useStyles = makeStyles((theme) => {
   }
 })
 
+
+const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
+  ({ theme, open }) => ({
+    flexGrow: 1,
+    padding: theme.spacing(3),
+    transition: theme.transitions.create('margin', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    marginLeft: `-${drawerWidth}px`,
+    ...(open && {
+      transition: theme.transitions.create('margin', {
+        easing: theme.transitions.easing.easeOut,
+        duration: theme.transitions.duration.enteringScreen,
+      }),
+      marginLeft: 0,
+    }),
+  }),
+);
+
+const AppBar = styled(MuiAppBar, {
+  shouldForwardProp: (prop) => prop !== 'open',
+})(({ theme, open }) => ({
+  transition: theme.transitions.create(['margin', 'width'], {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen,
+  }),
+  ...(open && {
+    width: `calc(100% - ${drawerWidth}px)`,
+    marginLeft: `${drawerWidth}px`,
+    transition: theme.transitions.create(['margin', 'width'], {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  }),
+}));
+
+const DrawerHeader = styled('div')(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  padding: theme.spacing(0, 1),
+  // necessary for content to be below app bar
+  ...theme.mixins.toolbar,
+  justifyContent: 'flex-end',
+}));
+
 export default function Layout({ children }) {
+  const theme = useTheme()
   const classes = useStyles()
   const history = useHistory()
   const location = useLocation()
+  const [open, setOpen] = React.useState(true);
+
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
 
   const menuItems = [
     { 
@@ -70,15 +140,19 @@ export default function Layout({ children }) {
   ];
 
   return (
-    <div className={classes.root}>
-      {/* app bar */}
-      <AppBar 
-        position="fixed" 
-        className={classes.appBar}
-        elevation={0}
-        color="primary"
-      >
+    <Box sx={{ display: 'flex' }}>
+      <CssBaseline />
+      <AppBar position="fixed" open={open}>
         <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawerOpen}
+            edge="start"
+            sx={{ mr: 2, ...(open && { display: 'none' }) }}
+          >
+            <Menu />
+          </IconButton>
           <Typography className={classes.date}>
             Today is the {format(new Date(), 'do MMMM Y')}
           </Typography>
@@ -89,18 +163,28 @@ export default function Layout({ children }) {
 
       {/* side drawer */}
       <Drawer
-        className={classes.drawer}
-        variant="permanent"
-        classes={{ paper: classes.drawerPaper }}
+        sx={{
+          width: drawerWidth,
+          flexShrink: 0,
+          '& .MuiDrawer-paper': {
+            width: drawerWidth,
+            boxSizing: 'border-box',
+          },
+        }}
+        variant="persistent"
         anchor="left"
+        open={open}
       >
-        <div>
+        <DrawerHeader>
           <Typography variant="h5" className={classes.title}>
             Saagie App
           </Typography>
-        </div>
+          <IconButton onClick={handleDrawerClose}>
+            {theme.direction === 'ltr' ? <ChevronLeft /> : <ChevronRight />}
+          </IconButton>
+        </DrawerHeader>
+        <Divider />
 
-        {/* links/list section */}
         <List>
           {menuItems.map((item) => (
             <ListItem 
@@ -117,11 +201,10 @@ export default function Layout({ children }) {
         
       </Drawer>
 
-      {/* main content */}
-      <div className={classes.page}>
-        <div className={classes.toolbar}></div>
+      <Main open={open}>
+        <DrawerHeader />
         { children }
-      </div>
-    </div>
+      </Main>
+    </Box>
   )
 }

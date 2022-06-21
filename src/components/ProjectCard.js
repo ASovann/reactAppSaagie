@@ -12,6 +12,24 @@ import { yellow, green, pink, blue } from '@material-ui/core/colors'
 const useStyles = makeStyles({
   avatar: {
     backgroundColor: (note) => {
+      if (note.creator === 'work') {
+        return yellow[700]
+      }
+      if (note.creator === 'money') {
+        return green[500]
+      }
+      if (note.creator === 'todos') {
+        return pink[500]
+      }
+      return blue[500]
+    }
+  },
+  card:{
+    borderRadius: 16
+  },
+  cardHeaderSubheader:{
+    fontSize:"13px",
+    color: (note) => {
       if (note.category === 'work') {
         return yellow[700]
       }
@@ -22,8 +40,12 @@ const useStyles = makeStyles({
         return pink[500]
       }
       return blue[500]
-    },
+    }
+  },
+  cardHeaderTitle:{
+    fontWeight:"Bold"
   }
+
 })
 
 export default function ProjectCard({ note, handleDelete }) {
@@ -31,23 +53,24 @@ export default function ProjectCard({ note, handleDelete }) {
 
   return (
     <div>
-      <Card elevation={1}>
+      <Card elevation={1} className={classes.card}>
         <CardHeader
           avatar={
             <Avatar className={classes.avatar}>
-              {note.category[0].toUpperCase()}
-            </Avatar>}
+              {note.creator.slice(0,2).toUpperCase()}
+            </Avatar>
+          }
           action={
             <IconButton onClick={() => handleDelete(note.id)}>
               <DeleteOutlined />
             </IconButton>
           }
-          title={note.title}
-          subheader={note.category}
+          title={<Typography className={classes.cardHeaderTitle}>{note.name}</Typography>}
+          subheader={<Typography className={classes.cardHeaderSubheader}>{note.creator}</Typography>}
         />
         <CardContent>
           <Typography variant="body2" color="textSecondary">
-            { note.details }
+            { note.description }
           </Typography>
         </CardContent>
       </Card>

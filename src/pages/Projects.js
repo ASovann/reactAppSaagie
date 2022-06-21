@@ -1,10 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import Container from '@material-ui/core/Container'
-import Masonry from 'react-masonry-css'
 import ProjectCard from '../components/ProjectCard'
+import { makeStyles } from '@material-ui/core'
+
+const useStyles = makeStyles({
+  root:{
+    display:"flex",
+    flexDirection:"column"
+  },
+  wrapper:{
+    display: "grid",
+    gridTemplateColumns: "repeat(3, 1fr)"
+  },
+  card:{
+    margin:20
+  }
+
+})
 
 export default function Notes() {
   const [notes, setNotes] = useState([]);
+  const classes = useStyles()
 
   useEffect(() => {
     fetch('http://localhost:8000/notes')
@@ -20,24 +36,16 @@ export default function Notes() {
     setNotes(newNotes)
   }
 
-  const breakpoints = {
-    default: 3,
-    1100: 2,
-    700: 1
-  };
 
   return (
-    <Container>
-      <Masonry
-        breakpointCols={breakpoints}
-        className="my-masonry-grid"
-        columnClassName="my-masonry-grid_column">
+    <Container className={classes.root}>
+      <div className={classes.wrapper}>
         {notes.map(note => (
-          <div key={note.id}>
+          <div key={note.id} className={classes.card}>
             <ProjectCard note={note} handleDelete={handleDelete} />
           </div>
         ))}
-      </Masonry>
+      </div>
     </Container>
   )
 }
