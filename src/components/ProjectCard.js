@@ -12,14 +12,14 @@ import Box from '@mui/material/Box';
 
 const useStyles = makeStyles({
   avatar: {
-    backgroundColor: (note) => {
-      if (note.creator === 'work') {
+    backgroundColor: (data) => {
+      if (data.creator === 'work') {
         return yellow[700]
       }
-      if (note.creator === 'money') {
+      if (data.creator === 'money') {
         return green[500]
       }
-      if (note.creator === 'todos') {
+      if (data.creator === 'todos') {
         return pink[500]
       }
       return blue[500]
@@ -30,14 +30,14 @@ const useStyles = makeStyles({
   },
   cardHeaderSubheader:{
     fontSize:"13px",
-    color: (note) => {
-      if (note.creator === 'work') {
+    color: (data) => {
+      if (data.creator === 'work') {
         return yellow[700]
       }
-      if (note.creator === 'money') {
+      if (data.creator === 'money') {
         return green[500]
       }
-      if (note.creator === 'todos') {
+      if (data.creator === 'todos') {
         return pink[500]
       }
       return blue[500]
@@ -63,8 +63,9 @@ const useStyles = makeStyles({
 
 })
 
-export default function ProjectCard({ note, handleDelete }) {
-  const classes = useStyles(note)
+export default function ProjectCard({ data, handleDelete }) {
+  
+  const classes = useStyles(data)
 
   return (
     <div>
@@ -72,24 +73,24 @@ export default function ProjectCard({ note, handleDelete }) {
         <CardHeader
           avatar={
             <Avatar className={classes.avatar}>
-              {note.creator.slice(0,2).toUpperCase()}
+              {data.creator.slice(0,2).toUpperCase()}
             </Avatar>
           }
           action={
-            <IconButton onClick={() => handleDelete(note.id)}>
+            <IconButton onClick={() => handleDelete(data.id)}>
               <DeleteOutlined />
             </IconButton>
           }
-          title={<Typography className={classes.cardHeaderTitle}>{note.name}</Typography>}
-          subheader={<Typography className={classes.cardHeaderSubheader}>{note.creator}</Typography>}
+          title={<Typography className={classes.cardHeaderTitle}>{data.name}</Typography>}
+          subheader={<Typography className={classes.cardHeaderSubheader}>{data.creator}</Typography>}
         />
         <CardContent>
           <Typography variant="body2" color="textSecondary">
-            { note.description }
+            { data.description }
           </Typography>
           <Box className={classes.cardFooter}>
-            <Typography className={classes.jobText}>Jobs: { note.jobsCount }</Typography>
-            <Typography className={classes.statusText}>Status: { note.status }</Typography>
+            <Typography className={classes.jobText}>Jobs: { data.jobsCount }</Typography>
+            <Typography className={classes.statusText}>Status: { data.status }</Typography>
           </Box>
         </CardContent>
       </Card>
