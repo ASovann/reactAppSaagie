@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core'
+import { AppBar, makeStyles } from '@material-ui/core'
 import Drawer from '@material-ui/core/Drawer'
 import Typography from '@material-ui/core/Typography'
 import { useHistory, useLocation } from 'react-router-dom'
@@ -11,7 +11,6 @@ import { AddCircleOutlineOutlined, SubjectOutlined } from '@material-ui/icons'
 import Toolbar from '@material-ui/core/Toolbar'
 import { format } from 'date-fns'
 import Avatar from '@material-ui/core/Avatar'
-import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 
 const drawerWidth = 240
@@ -78,7 +77,7 @@ export default function Layout({ children }) {
   return (
     <div className={classes.root}>
       {/* app bar */}
-      <Card
+      <AppBar
         className={classes.appBar}
         color="primary"
         variant='outlined'
@@ -92,7 +91,7 @@ export default function Layout({ children }) {
           <Avatar className={classes.avatar} src="/mario-av.png" />
         </Toolbar>
         </CardContent>
-      </Card>
+      </AppBar>
 
       {/* side drawer */}
       <Drawer

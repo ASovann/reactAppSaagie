@@ -57,7 +57,7 @@ export default function ProjectCard({ note, handleDelete }) {
         <CardHeader
           avatar={
             <Avatar className={classes.avatar}>
-              {note.name[0].toUpperCase()}
+              {note.creator.slice(0,2).toUpperCase()}
             </Avatar>
           }
           action={
