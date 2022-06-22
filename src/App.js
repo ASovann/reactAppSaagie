@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Projects from './pages/Projects'
 import Create from './pages/Create'
+import DetailsProject from './pages/DetailsProject'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core'
 import { purple } from '@material-ui/core/colors'
 import Layout from './components/Layout'
@@ -33,6 +34,9 @@ function App() {
             </Route>
             <Route path="/create">
               <Create />
+            </Route>
+            <Route path="/project/:id">
+              <DetailsProject />
             </Route>
           </Switch>
           

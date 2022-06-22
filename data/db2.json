@@ -1,0 +1,280 @@
+{
+    "data": {
+      "project": {
+        "id": "b736ceab-de22-4493-8d17-9669fdc1f78c",
+        "name": "[ESTIAM] G03 Hackathon",
+        "description": "",
+        "status": "READY",
+        "jobsCount": 3,
+        "creator": "benoit.franck",
+        "volumes": [],
+        "pipelines": [
+          {
+            "id": "1b4ec21f-52de-4952-bcdb-37de2cd57147",
+            "name": "Pipeline test",
+            "description": "Ceci est une description de la pipeline",
+            "alerting": null,
+            "pipelineInstanceCount": 0,
+            "instances": [],
+            "versions": [
+              {
+                "number": 1,
+                "releaseNote": null,
+                "graph": {
+                  "jobNodes": [
+                    {
+                      "id": "fe1dbed0-f151-11ec-9de2-2531d994978b",
+                      "job": {
+                        "id": "b4d37902-b16d-47b5-b4e9-4f5c3a1c0a0e",
+                        "name": "Nouveau job",
+                        "description": "Ceci est une description",
+                        "countJobInstance": 0,
+                        "versions": [
+                          {
+                            "number": 1,
+                            "creationDate": "2022-06-21T11:02:39.175Z",
+                            "releaseNote": "",
+                            "runtimeVersion": "docker",
+                            "commandLine": null,
+                            "packageInfo": null,
+                            "dockerInfo": {
+                              "image": "hello-world",
+                              "dockerCredentialsId": null
+                            },
+                            "extraTechnology": null,
+                            "isCurrent": true,
+                            "isMajor": false,
+                            "creator": "estiam_g03_cristian.tirche",
+                            "exposedPorts": [],
+                            "storagePaths": []
+                          }
+                        ],
+                        "category": "Extraction",
+                        "technology": {
+                          "id": "d6ba711b-4ae1-4c19-96a4-3c7d35039f3f"
+                        },
+                        "isScheduled": false,
+                        "cronScheduling": null,
+                        "scheduleStatus": null,
+                        "scheduleTimezone": "UTC",
+                        "alerting": null,
+                        "isStreaming": false,
+                        "creationDate": "2022-06-21T11:02:39.175Z",
+                        "migrationStatus": null,
+                        "migrationProjectId": null,
+                        "isDeletable": true,
+                        "pipelines": [],
+                        "graphPipelines": [
+                          {
+                            "id": "1b4ec21f-52de-4952-bcdb-37de2cd57147",
+                            "name": "Pipeline test"
+                          }
+                        ],
+                        "storageSizeInMB": null,
+                        "doesUseGPU": false,
+                        "resources": {
+                          "cpu": null,
+                          "memory": null,
+                          "gpu": null
+                        }
+                      },
+                      "position": {
+                        "x": 896,
+                        "y": 474
+                      },
+                      "nextNodes": []
+                    }
+                  ],
+                  "conditionNodes": []
+                },
+                "creationDate": "2022-06-21T11:06:27.554Z",
+                "creator": "estiam_g03_cristian.tirche",
+                "isCurrent": true,
+                "isMajor": false
+              }
+            ],
+            "creationDate": "2022-06-21T11:06:27.554Z",
+            "creator": "estiam_g03_cristian.tirche",
+            "isScheduled": false,
+            "cronScheduling": null,
+            "scheduleStatus": null,
+            "scheduleTimezone": "UTC",
+            "isLegacyPipeline": false
+          }
+        ]
+      },
+      "labWebApps": [
+        {
+          "id": "bb9f74ad-9717-47bb-8285-1a66a59306e1",
+          "name": "Application R STUDIO",
+          "description": "ceci est un test.",
+          "countJobInstance": 0,
+          "versions": [
+            {
+              "number": 1,
+              "creationDate": "2022-06-22T10:19:03.532Z",
+              "releaseNote": "",
+              "runtimeVersion": null,
+              "commandLine": null,
+              "packageInfo": null,
+              "dockerInfo": {
+                "image": "saagie/rstudio:4.1-1.101.0",
+                "dockerCredentialsId": null
+              },
+              "extraTechnology": null,
+              "isCurrent": true,
+              "isMajor": false,
+              "creator": "estiam_g03_cristian.tirche",
+              "exposedPorts": [
+                {
+                  "name": "Rstudio",
+                  "port": 80,
+                  "isRewriteUrl": false,
+                  "basePathVariableName": "SAAGIE_BASE_PATH",
+                  "isAuthenticationRequired": true
+                }
+              ],
+              "storagePaths": [
+                "/home"
+              ]
+            }
+          ],
+          "category": "",
+          "technology": {
+            "id": "0bef4eac-05c0-47da-8606-e8154a071f63"
+          },
+          "isScheduled": false,
+          "cronScheduling": null,
+          "scheduleStatus": null,
+          "scheduleTimezone": "UTC",
+          "alerting": {
+            "emails": [
+              "cristian.tirche@estiam.com"
+            ],
+            "statusList": [
+              "FAILED",
+              "REQUESTED"
+            ],
+            "loginEmails": []
+          },
+          "isStreaming": false,
+          "creationDate": "2022-06-22T10:19:03.532Z",
+          "migrationStatus": null,
+          "migrationProjectId": null,
+          "isDeletable": true,
+          "storageSizeInMB": 64,
+          "doesUseGPU": false,
+          "resources": null
+        },
+        {
+          "id": "8792bf30-8e9d-4d37-ba11-f206a0297e21",
+          "name": "Nouvelle application",
+          "description": "Ceci est la description d'une nouvelle application",
+          "countJobInstance": 0,
+          "versions": [
+            {
+              "number": 1,
+              "creationDate": "2022-06-21T11:08:37.359Z",
+              "releaseNote": "",
+              "runtimeVersion": null,
+              "commandLine": null,
+              "packageInfo": null,
+              "dockerInfo": {
+                "image": "saagie/jupyter-python-nbk:pyspark-1.73.0",
+                "dockerCredentialsId": null
+              },
+              "extraTechnology": null,
+              "isCurrent": true,
+              "isMajor": false,
+              "creator": "estiam_g03_cristian.tirche",
+              "exposedPorts": [
+                {
+                  "name": "Notebook",
+                  "port": 8888,
+                  "isRewriteUrl": false,
+                  "basePathVariableName": "SAAGIE_BASE_PATH",
+                  "isAuthenticationRequired": true
+                },
+                {
+                  "name": "SparkUI",
+                  "port": 8080,
+                  "isRewriteUrl": false,
+                  "basePathVariableName": "SPARK_UI_PATH",
+                  "isAuthenticationRequired": true
+                }
+              ],
+              "storagePaths": [
+                "/notebooks-dir"
+              ]
+            }
+          ],
+          "category": "",
+          "technology": {
+            "id": "526b740f-007d-4582-b9e8-0ca64aff68f0"
+          },
+          "isScheduled": false,
+          "cronScheduling": null,
+          "scheduleStatus": null,
+          "scheduleTimezone": "UTC",
+          "alerting": null,
+          "isStreaming": false,
+          "creationDate": "2022-06-21T11:08:37.359Z",
+          "migrationStatus": null,
+          "migrationProjectId": null,
+          "isDeletable": true,
+          "storageSizeInMB": 64,
+          "doesUseGPU": false,
+          "resources": null
+        }
+      ],
+      "jobs": [
+        {
+          "id": "b4d37902-b16d-47b5-b4e9-4f5c3a1c0a0e",
+          "name": "Nouveau job",
+          "description": "Ceci est une description",
+          "countJobInstance": 0,
+          "versions": [
+            {
+              "number": 1,
+              "creationDate": "2022-06-21T11:02:39.175Z",
+              "releaseNote": "",
+              "runtimeVersion": "docker",
+              "commandLine": null,
+              "packageInfo": null,
+              "dockerInfo": {
+                "image": "hello-world",
+                "dockerCredentialsId": null
+              },
+              "extraTechnology": null,
+              "isCurrent": true,
+              "isMajor": false,
+              "creator": "estiam_g03_cristian.tirche",
+              "exposedPorts": [],
+              "storagePaths": []
+            }
+          ],
+          "category": "Extraction",
+          "technology": {
+            "id": "d6ba711b-4ae1-4c19-96a4-3c7d35039f3f"
+          },
+          "isScheduled": false,
+          "cronScheduling": null,
+          "scheduleStatus": null,
+          "scheduleTimezone": "UTC",
+          "alerting": null,
+          "isStreaming": false,
+          "creationDate": "2022-06-21T11:02:39.175Z",
+          "migrationStatus": null,
+          "migrationProjectId": null,
+          "isDeletable": false,
+          "storageSizeInMB": null,
+          "doesUseGPU": false,
+          "resources": {
+            "cpu": null,
+            "memory": null,
+            "gpu": null
+          }
+        }
+      ]
+    }
+  }
