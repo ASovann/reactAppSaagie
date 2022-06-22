@@ -6,6 +6,7 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core'
 import { purple } from '@material-ui/core/colors'
 import Layout from './components/Layout'
 
+
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -38,7 +39,9 @@ function App() {
               <DetailsProject />
             </Route>
           </Switch>
+          
         </Layout>
+        
       </Router>
     </ThemeProvider>
   );

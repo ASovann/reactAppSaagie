@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from "react"
 import { makeStyles } from '@material-ui/core'
 import { useHistory, useLocation } from 'react-router-dom'
 import { AddCircleOutlineOutlined, SubjectOutlined } from '@material-ui/icons'
@@ -20,6 +21,11 @@ import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Avatar from '@material-ui/core/Avatar'
+import MainLogo from "../media/logo_white_440x440.png"
+import "../styles/LogoStyle.css"
+
+import LoadingComponent from "./LoadingComponent";
+import ErrorComponent from "./ErrorComponent";
 
 const drawerWidth = 240
 
@@ -83,6 +89,13 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 }));
 
 export default function Layout({ children }) {
+
+  // Define the update method for loading
+  const [loading, setLoading] = useState(true)
+  const [erroring, setErroring] = useState(false)
+  const [errMess, setErrMess] = useState("")
+  
+  
   const theme = useTheme()
   const classes = useStyles()
   const history = useHistory()
@@ -98,17 +111,24 @@ export default function Layout({ children }) {
   };
 
   const menuItems = [
-    { 
+    {
       text: 'Projects', 
       icon: <SubjectOutlined color="secondary" />, 
       path: '/' 
     },
-    { 
+    {
       text: 'Create Projects', 
       icon: <AddCircleOutlineOutlined color="secondary" />, 
       path: '/create' 
     },
   ];
+
+  setTimeout(() => {setLoading(false)}, 800)
+  // setTimeout(() => {setErroring(false)}, 500)
+  // Display "Loading.. " message to the screen while waiting for the api return to load
+  //if (loading) return <LoadingComponent/>
+  //if (erroring) return <ErrorComponent errMess={errMess} />
+  //if (erroring) return <ErrorComponent errMess={errMess} />
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -124,6 +144,9 @@ export default function Layout({ children }) {
           >
             <Menu />
           </IconButton>
+
+          
+
           <Typography className={classes.date}>
             Today is the {format(new Date(), 'do MMMM Y')}
           </Typography>
@@ -133,6 +156,7 @@ export default function Layout({ children }) {
       </AppBar>
 
       {/* side drawer */}
+      
       <Drawer
         sx={{
           width: drawerWidth,
@@ -140,12 +164,15 @@ export default function Layout({ children }) {
           '& .MuiDrawer-paper': {
             width: drawerWidth,
             boxSizing: 'border-box',
+            justifyContent: 'space-between',
           },
         }}
         variant="persistent"
         anchor="left"
         open={open}
       >
+
+        <div className='DrawerTop'>
         <DrawerHeader>
           <Typography variant="h5" className={classes.title}>
             Saagie App
@@ -169,12 +196,17 @@ export default function Layout({ children }) {
             </ListItem>
           ))}
         </List>
-        
+        </div>
+        <div className='DrawerBottom'>
+          <img src={MainLogo} alt="Logo"  className='logoImg'/>
+        </div>
       </Drawer>
-
+      
       <Main open={open}>
         <DrawerHeader />
-        { children }
+        {loading ?  <LoadingComponent/> : (erroring ?  <ErrorComponent errMess={errMess} /> : children)}
+        {/* {erroring ?  <ErrorComponent errMess={errMess} /> : null} */}
+        {/* { children } */}
       </Main>
     </Box>
   )

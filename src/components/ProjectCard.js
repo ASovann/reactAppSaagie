@@ -73,7 +73,9 @@ const useStyles = makeStyles({
 })
 
 export default function ProjectCard({ data, handleDelete }) {
+
   const history = useHistory()
+
   const classes = useStyles(data)
 
   return (
@@ -100,6 +102,7 @@ export default function ProjectCard({ data, handleDelete }) {
           <Box className={classes.cardFooter}>
             <Typography className={classes.jobText}>Jobs: { data.jobsCount }</Typography>
             <Typography className={classes.statusText}>Status: { data.status }</Typography>
+
             <IconButton className={classes.iconButton} onClick={() => history.push('/project/' + data.id)}>
               <SearchOutlined />
             </IconButton>
