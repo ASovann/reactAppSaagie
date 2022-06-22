@@ -8,6 +8,8 @@
 
 import React, { useState, useEffect } from "react"
 
+// Import the media file
+import loadingLogoGif from "../media/LoadingAnimation1.gif"
 // Import the stylesheet for this components
 import "../styles/LoadingComponent.css"
 
@@ -54,7 +56,7 @@ function LoadingComponent() {
 
     return (
         <div className='loadingComponent'>
-            {/* <img className="loadingImg" src={loadingLogoGif} alt="Logo" />  */}
+            <img className="loadingImg" src={loadingLogoGif} alt="Loading animation" /> 
             <p id='loadingTxt'>{loadTxt}</p>
         </div>
     )

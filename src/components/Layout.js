@@ -88,8 +88,10 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 export default function Layout({ children }) {
 
+  // Define the update method for loading
   const [loading, setLoading] = useState(true)
   const [erroring, setErroring] = useState(true)
+  const [errMess, setErrMess] = useState("")
   
   
   const theme = useTheme()
@@ -119,11 +121,12 @@ export default function Layout({ children }) {
     },
   ];
 
-  setTimeout(() => {setLoading(false)}, 1000)
+  setTimeout(() => {setLoading(false)}, 3000)
+  setTimeout(() => {setErroring(false)}, 3000)
   // Display "Loading.. " message to the screen while waiting for the api return to load
-  if (loading) return <LoadingComponent/>
-  if (erroring) return <ErrorComponent />
-  // if (erroring) return <ErrorComponent errMess={errMess} />
+  //if (loading) return <LoadingComponent/>
+  //if (erroring) return <ErrorComponent errMess={errMess} />
+  //if (erroring) return <ErrorComponent errMess={errMess} />
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -189,7 +192,9 @@ export default function Layout({ children }) {
 
       <Main open={open}>
         <DrawerHeader />
-        { children }
+        {loading ?  <LoadingComponent/> : (erroring ?  <ErrorComponent errMess={errMess} /> : children)}
+        {/* {erroring ?  <ErrorComponent errMess={errMess} /> : null} */}
+        {/* { children } */}
       </Main>
     </Box>
   )

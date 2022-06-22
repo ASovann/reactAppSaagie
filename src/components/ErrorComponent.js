@@ -2,8 +2,7 @@ import React from "react"
 import "../styles/ErrorComponent.css"
 
 /**
- * This is the default error component to display when an unexpected error
- * occurs
+ * This is the default error component to display when an error occurs
  * @author Cristian Tirche 
  * @author cristian.tirche@gmail.com
  */
