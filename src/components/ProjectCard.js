@@ -11,7 +11,9 @@ import { yellow, green, pink, blue } from '@material-ui/core/colors'
 import Box from '@mui/material/Box';
 import { SearchOutlined } from '@material-ui/icons'
 import { useHistory,  } from 'react-router-dom'
-
+import { Button } from '@mui/material'
+import axios from 'axios'
+import CardActions from '@mui/material/CardActions';
 
 const useStyles = makeStyles({
   avatar: {
@@ -56,18 +58,18 @@ const useStyles = makeStyles({
     marginTop:10,
   },
   jobText:{
-    
     fontSize:13,
-
   },
   statusText:{
-    
     fontSize:14,
     color: (data) => {
       if(data.status ==='READY'){
         return green[500]
       }
     }
+  },
+  cardActions:{
+    justifyContent:"space-between"
   }
 
 })
@@ -77,6 +79,14 @@ export default function ProjectCard({ data, handleDelete }) {
   const history = useHistory()
 
   const classes = useStyles(data)
+
+  const duplicateButton = () =>{
+    console.log("test:", data.id)
+    axios.get('http://localhost:4000/api/duplicate/' + data.id)
+    .then(res => {
+      return res.data.data
+  })
+  }
 
   return (
     <div>
@@ -102,11 +112,13 @@ export default function ProjectCard({ data, handleDelete }) {
           <Box className={classes.cardFooter}>
             <Typography className={classes.jobText}>Jobs: { data.jobsCount }</Typography>
             <Typography className={classes.statusText}>Status: { data.status }</Typography>
-
-            <IconButton className={classes.iconButton} onClick={() => history.push('/project/' + data.id)}>
-              <SearchOutlined />
-            </IconButton>
           </Box>
+          <CardActions className={classes.cardActions}>
+              <Button variant='text' onClick={() => duplicateButton()}>Duplicate</Button>
+              <IconButton className={classes.iconButton} onClick={() => history.push('/project/' + data.id)}>
+                <SearchOutlined />
+              </IconButton>
+            </CardActions>
         </CardContent>
       </Card>
     </div>

@@ -26,6 +26,7 @@ import "../styles/LogoStyle.css"
 
 import LoadingComponent from "./LoadingComponent";
 import ErrorComponent from "./ErrorComponent";
+import { Button } from '@mui/material'
 
 const drawerWidth = 240
 
@@ -116,11 +117,6 @@ export default function Layout({ children }) {
       icon: <SubjectOutlined color="secondary" />, 
       path: '/' 
     },
-    {
-      text: 'Create Projects', 
-      icon: <AddCircleOutlineOutlined color="secondary" />, 
-      path: '/create' 
-    },
   ];
 
   setTimeout(() => {setLoading(false)}, 800)
@@ -195,6 +191,7 @@ export default function Layout({ children }) {
               <ListItemText primary={item.text} />
             </ListItem>
           ))}
+          <Button></Button>
         </List>
         </div>
         <div className='DrawerBottom'>

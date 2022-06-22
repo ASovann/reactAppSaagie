@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Container from '@material-ui/core/Container'
 import ProjectCard from '../components/ProjectCard'
 import { makeStyles } from '@material-ui/core'
+import axios from 'axios'
 
 const useStyles = makeStyles({
   root:{
@@ -27,10 +28,10 @@ export default function Data() {
   const classes = useStyles()
 
   useEffect(() => {
-    fetch('http://localhost:8000/data')
-      .then(res => res.json())
+    axios.get('http://localhost:4000/api/projects')
+      .then(res => res.data.data)
       .then(data => setProject(data.projects))
-      
+      .catch(error => console.log(error))
       
   }, [])
   

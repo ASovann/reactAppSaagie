@@ -8,7 +8,7 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import { Divider } from '@mui/material';
-
+import axios from 'axios'
 
 const useStyles = makeStyles({
     main:{
@@ -44,7 +44,6 @@ const Pipelines = (props) => {
             elements.push(<span key={getRandomInt(1000)}> {key} : {value !== '' ? value.toString() : <span>No {key}</span>}</span>)
         }
     }
-    console.log(elements)
     return(
         <>{elements.map((element) => (<div key={getRandomInt(1000)}>{element}<br/></div>))}</>
         
@@ -117,12 +116,15 @@ export default function DetailsProject() {
     };
 
     useEffect(() => {
-        fetch('http://localhost:8001/data')
-          .then(res => res.json())
+        axios.get('http://localhost:4000/api/project/' + id)
+          .then(res => {
+              return res.data.data
+        })
           .then(data => {
+                console.log("data: ",data)
               setProject(data.project)
               setPipelines(data.project.pipelines)
-              console.log(data.project.pipelines)
+              
               setJobs(data.jobs)
               setApps(data.labWebApps)
             })

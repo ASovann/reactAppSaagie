@@ -1,3 +1,4 @@
+import {useEffect, useState} from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Projects from './pages/Projects'
 import Create from './pages/Create'
@@ -5,6 +6,7 @@ import DetailsProject from './pages/DetailsProject'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core'
 import { purple } from '@material-ui/core/colors'
 import Layout from './components/Layout'
+import axios from 'axios'
 
 
 const theme = createMuiTheme({
@@ -24,6 +26,18 @@ const theme = createMuiTheme({
 })
 
 function App() {
+  const [token, setToken] = useState(false)
+
+  useEffect(() => {
+    setToken(localStorage.getItem("token").length > 0)
+    if(!token){
+      axios.post('http://localhost:4000/api/signin', {"login":"ESTIAM_G03_cristian.tirche","password":"PasDePanneau123"})
+      .then(res => localStorage.setItem("token", res.data.token))
+    }
+    
+      
+  }, [token])
+
   return (
     <ThemeProvider theme={theme}>
       <Router>
