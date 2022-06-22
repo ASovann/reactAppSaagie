@@ -21,6 +21,8 @@ import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Avatar from '@material-ui/core/Avatar'
+import MainLogo from "../media/logo_white_440x440.png"
+import "../styles/LogoStyle.css"
 
 import LoadingComponent from "./LoadingComponent";
 import ErrorComponent from "./ErrorComponent";
@@ -109,12 +111,12 @@ export default function Layout({ children }) {
   };
 
   const menuItems = [
-    { 
+    {
       text: 'Projects', 
       icon: <SubjectOutlined color="secondary" />, 
       path: '/' 
     },
-    { 
+    {
       text: 'Create Projects', 
       icon: <AddCircleOutlineOutlined color="secondary" />, 
       path: '/create' 
@@ -142,6 +144,9 @@ export default function Layout({ children }) {
           >
             <Menu />
           </IconButton>
+
+          
+
           <Typography className={classes.date}>
             Today is the {format(new Date(), 'do MMMM Y')}
           </Typography>
@@ -151,6 +156,7 @@ export default function Layout({ children }) {
       </AppBar>
 
       {/* side drawer */}
+      
       <Drawer
         sx={{
           width: drawerWidth,
@@ -158,12 +164,15 @@ export default function Layout({ children }) {
           '& .MuiDrawer-paper': {
             width: drawerWidth,
             boxSizing: 'border-box',
+            justifyContent: 'space-between',
           },
         }}
         variant="persistent"
         anchor="left"
         open={open}
       >
+
+        <div className='DrawerTop'>
         <DrawerHeader>
           <Typography variant="h5" className={classes.title}>
             Saagie App
@@ -187,9 +196,12 @@ export default function Layout({ children }) {
             </ListItem>
           ))}
         </List>
-        
+        </div>
+        <div className='DrawerBottom'>
+          <img src={MainLogo} alt="Logo"  className='logoImg'/>
+        </div>
       </Drawer>
-
+      
       <Main open={open}>
         <DrawerHeader />
         {loading ?  <LoadingComponent/> : (erroring ?  <ErrorComponent errMess={errMess} /> : children)}
