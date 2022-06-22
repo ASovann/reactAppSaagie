@@ -1,12 +1,686 @@
 {
-  "notes": [
+  "data": {
+    "projects":[
+      {
+        "id": "b736ceab-de22-4493-8d17-9669fdc1f78c",
+        "name": "[ESTIAM] G03 Hackathon",
+        "creator": "benoit.franck",
+        "description": "",
+        "jobsCount": 2,
+        "status": "READY",
+        "apps": [],
+        "volumes": [],
+        "pipelines": [
+            {
+                "id": "1b4ec21f-52de-4952-bcdb-37de2cd57147",
+                "name": "Pipeline test",
+                "description": "Ceci est une description de la pipeline",
+                "alerting": null,
+                "pipelineInstanceCount": 0,
+                "instances": [],
+                "versions": [
+                    {
+                        "number": 1,
+                        "releaseNote": null,
+                        "graph": {
+                            "jobNodes": [
+                                {
+                                    "id": "fcd3d9b0-f151-11ec-9de2-2531d994978b",
+                                    "job": {
+                                        "id": "b4d37902-b16d-47b5-b4e9-4f5c3a1c0a0e",
+                                        "name": "Nouveau job",
+                                        "description": "Ceci est une description",
+                                        "countJobInstance": 0,
+                                        "versions": [
+                                            {
+                                                "number": 1,
+                                                "creationDate": "2022-06-21T11:02:39.175Z",
+                                                "releaseNote": "",
+                                                "runtimeVersion": "docker",
+                                                "commandLine": null,
+                                                "packageInfo": null,
+                                                "dockerInfo": {
+                                                    "image": "hello-world",
+                                                    "dockerCredentialsId": null
+                                                },
+                                                "extraTechnology": null,
+                                                "isCurrent": true,
+                                                "isMajor": false,
+                                                "creator": "estiam_g03_cristian.tirche",
+                                                "exposedPorts": [],
+                                                "storagePaths": []
+                                            }
+                                        ],
+                                        "category": "Extraction",
+                                        "technology": {
+                                            "id": "d6ba711b-4ae1-4c19-96a4-3c7d35039f3f"
+                                        },
+                                        "isScheduled": false,
+                                        "cronScheduling": null,
+                                        "scheduleStatus": null,
+                                        "scheduleTimezone": "UTC",
+                                        "alerting": null,
+                                        "isStreaming": false,
+                                        "creationDate": "2022-06-21T11:02:39.175Z",
+                                        "migrationStatus": null,
+                                        "migrationProjectId": null,
+                                        "isDeletable": true,
+                                        "pipelines": [],
+                                        "graphPipelines": [
+                                            {
+                                                "id": "1b4ec21f-52de-4952-bcdb-37de2cd57147",
+                                                "name": "Pipeline test"
+                                            }
+                                        ],
+                                        "storageSizeInMB": null,
+                                        "doesUseGPU": false,
+                                        "resources": {
+                                            "cpu": null,
+                                            "memory": null,
+                                            "gpu": null
+                                        }
+                                    },
+                                    "position": {
+                                        "x": 896,
+                                        "y": 362
+                                    },
+                                    "nextNodes": []
+                                },
+                                {
+                                    "id": "fe1dbed0-f151-11ec-9de2-2531d994978b",
+                                    "job": {
+                                        "id": "b4d37902-b16d-47b5-b4e9-4f5c3a1c0a0e",
+                                        "name": "Nouveau job",
+                                        "description": "Ceci est une description",
+                                        "countJobInstance": 0,
+                                        "versions": [
+                                            {
+                                                "number": 1,
+                                                "creationDate": "2022-06-21T11:02:39.175Z",
+                                                "releaseNote": "",
+                                                "runtimeVersion": "docker",
+                                                "commandLine": null,
+                                                "packageInfo": null,
+                                                "dockerInfo": {
+                                                    "image": "hello-world",
+                                                    "dockerCredentialsId": null
+                                                },
+                                                "extraTechnology": null,
+                                                "isCurrent": true,
+                                                "isMajor": false,
+                                                "creator": "estiam_g03_cristian.tirche",
+                                                "exposedPorts": [],
+                                                "storagePaths": []
+                                            }
+                                        ],
+                                        "category": "Extraction",
+                                        "technology": {
+                                            "id": "d6ba711b-4ae1-4c19-96a4-3c7d35039f3f"
+                                        },
+                                        "isScheduled": false,
+                                        "cronScheduling": null,
+                                        "scheduleStatus": null,
+                                        "scheduleTimezone": "UTC",
+                                        "alerting": null,
+                                        "isStreaming": false,
+                                        "creationDate": "2022-06-21T11:02:39.175Z",
+                                        "migrationStatus": null,
+                                        "migrationProjectId": null,
+                                        "isDeletable": true,
+                                        "pipelines": [],
+                                        "graphPipelines": [
+                                            {
+                                                "id": "1b4ec21f-52de-4952-bcdb-37de2cd57147",
+                                                "name": "Pipeline test"
+                                            }
+                                        ],
+                                        "storageSizeInMB": null,
+                                        "doesUseGPU": false,
+                                        "resources": {
+                                            "cpu": null,
+                                            "memory": null,
+                                            "gpu": null
+                                        }
+                                    },
+                                    "position": {
+                                        "x": 896,
+                                        "y": 474
+                                    },
+                                    "nextNodes": []
+                                }
+                            ],
+                            "conditionNodes": []
+                        },
+                        "creationDate": "2022-06-21T11:06:27.554Z",
+                        "creator": "estiam_g03_cristian.tirche",
+                        "isCurrent": true,
+                        "isMajor": false
+                    }
+                ],
+                "project": {
+                    "id": "b736ceab-de22-4493-8d17-9669fdc1f78c",
+                    "name": "[ESTIAM] G03 Hackathon"
+                },
+                "creationDate": "2022-06-21T11:06:27.554Z",
+                "creator": "estiam_g03_cristian.tirche",
+                "isScheduled": false,
+                "cronScheduling": null,
+                "scheduleStatus": null,
+                "scheduleTimezone": "UTC",
+                "isLegacyPipeline": false
+            }
+        ]
+    },
+    
+    {
+      "id": "dc8bef98-e177-4ea6-bbc0-de7b55942a28",
+      "name": "test",
+      "creator": "estiam_g03_cristian.tirche",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took.",
+      "jobsCount": 0,
+      "status": "READY",
+      "apps": [],
+        "volumes": [],
+        "pipelines": [
+            {
+                "id": "1b4ec21f-52de-4952-bcdb-37de2cd57147",
+                "name": "Pipeline test",
+                "description": "Ceci est une description de la pipeline",
+                "alerting": null,
+                "pipelineInstanceCount": 0,
+                "instances": [],
+                "versions": [
+                    {
+                        "number": 1,
+                        "releaseNote": null,
+                        "graph": {
+                            "jobNodes": [
+                                {
+                                    "id": "fcd3d9b0-f151-11ec-9de2-2531d994978b",
+                                    "job": {
+                                        "id": "b4d37902-b16d-47b5-b4e9-4f5c3a1c0a0e",
+                                        "name": "Nouveau job",
+                                        "description": "Ceci est une description",
+                                        "countJobInstance": 0,
+                                        "versions": [
+                                            {
+                                                "number": 1,
+                                                "creationDate": "2022-06-21T11:02:39.175Z",
+                                                "releaseNote": "",
+                                                "runtimeVersion": "docker",
+                                                "commandLine": null,
+                                                "packageInfo": null,
+                                                "dockerInfo": {
+                                                    "image": "hello-world",
+                                                    "dockerCredentialsId": null
+                                                },
+                                                "extraTechnology": null,
+                                                "isCurrent": true,
+                                                "isMajor": false,
+                                                "creator": "estiam_g03_cristian.tirche",
+                                                "exposedPorts": [],
+                                                "storagePaths": []
+                                            }
+                                        ],
+                                        "category": "Extraction",
+                                        "technology": {
+                                            "id": "d6ba711b-4ae1-4c19-96a4-3c7d35039f3f"
+                                        },
+                                        "isScheduled": false,
+                                        "cronScheduling": null,
+                                        "scheduleStatus": null,
+                                        "scheduleTimezone": "UTC",
+                                        "alerting": null,
+                                        "isStreaming": false,
+                                        "creationDate": "2022-06-21T11:02:39.175Z",
+                                        "migrationStatus": null,
+                                        "migrationProjectId": null,
+                                        "isDeletable": true,
+                                        "pipelines": [],
+                                        "graphPipelines": [
+                                            {
+                                                "id": "1b4ec21f-52de-4952-bcdb-37de2cd57147",
+                                                "name": "Pipeline test"
+                                            }
+                                        ],
+                                        "storageSizeInMB": null,
+                                        "doesUseGPU": false,
+                                        "resources": {
+                                            "cpu": null,
+                                            "memory": null,
+                                            "gpu": null
+                                        }
+                                    },
+                                    "position": {
+                                        "x": 896,
+                                        "y": 362
+                                    },
+                                    "nextNodes": []
+                                },
+                                {
+                                    "id": "fe1dbed0-f151-11ec-9de2-2531d994978b",
+                                    "job": {
+                                        "id": "b4d37902-b16d-47b5-b4e9-4f5c3a1c0a0e",
+                                        "name": "Nouveau job",
+                                        "description": "Ceci est une description",
+                                        "countJobInstance": 0,
+                                        "versions": [
+                                            {
+                                                "number": 1,
+                                                "creationDate": "2022-06-21T11:02:39.175Z",
+                                                "releaseNote": "",
+                                                "runtimeVersion": "docker",
+                                                "commandLine": null,
+                                                "packageInfo": null,
+                                                "dockerInfo": {
+                                                    "image": "hello-world",
+                                                    "dockerCredentialsId": null
+                                                },
+                                                "extraTechnology": null,
+                                                "isCurrent": true,
+                                                "isMajor": false,
+                                                "creator": "estiam_g03_cristian.tirche",
+                                                "exposedPorts": [],
+                                                "storagePaths": []
+                                            }
+                                        ],
+                                        "category": "Extraction",
+                                        "technology": {
+                                            "id": "d6ba711b-4ae1-4c19-96a4-3c7d35039f3f"
+                                        },
+                                        "isScheduled": false,
+                                        "cronScheduling": null,
+                                        "scheduleStatus": null,
+                                        "scheduleTimezone": "UTC",
+                                        "alerting": null,
+                                        "isStreaming": false,
+                                        "creationDate": "2022-06-21T11:02:39.175Z",
+                                        "migrationStatus": null,
+                                        "migrationProjectId": null,
+                                        "isDeletable": true,
+                                        "pipelines": [],
+                                        "graphPipelines": [
+                                            {
+                                                "id": "1b4ec21f-52de-4952-bcdb-37de2cd57147",
+                                                "name": "Pipeline test"
+                                            }
+                                        ],
+                                        "storageSizeInMB": null,
+                                        "doesUseGPU": false,
+                                        "resources": {
+                                            "cpu": null,
+                                            "memory": null,
+                                            "gpu": null
+                                        }
+                                    },
+                                    "position": {
+                                        "x": 896,
+                                        "y": 474
+                                    },
+                                    "nextNodes": []
+                                }
+                            ],
+                            "conditionNodes": []
+                        },
+                        "creationDate": "2022-06-21T11:06:27.554Z",
+                        "creator": "estiam_g03_cristian.tirche",
+                        "isCurrent": true,
+                        "isMajor": false
+                    }
+                ],
+                "project": {
+                    "id": "b736ceab-de22-4493-8d17-9669fdc1f78c",
+                    "name": "[ESTIAM] G03 Hackathon"
+                },
+                "creationDate": "2022-06-21T11:06:27.554Z",
+                "creator": "estiam_g03_cristian.tirche",
+                "isScheduled": false,
+                "cronScheduling": null,
+                "scheduleStatus": null,
+                "scheduleTimezone": "UTC",
+                "isLegacyPipeline": false
+            }
+        ]
+    },
+    {
+      "id": "dc8bef98-e177-4ea6-bbc0-de7b55942a27",
+      "name": "test",
+      "creator": "estiam_g03_cristian.tirche",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took.",
+      "jobsCount": 0,
+      "status": "READY",
+      "apps": [],
+        "volumes": [],
+        "pipelines": [
+            {
+                "id": "1b4ec21f-52de-4952-bcdb-37de2cd57147",
+                "name": "Pipeline test",
+                "description": "Ceci est une description de la pipeline",
+                "alerting": null,
+                "pipelineInstanceCount": 0,
+                "instances": [],
+                "versions": [
+                    {
+                        "number": 1,
+                        "releaseNote": null,
+                        "graph": {
+                            "jobNodes": [
+                                {
+                                    "id": "fcd3d9b0-f151-11ec-9de2-2531d994978b",
+                                    "job": {
+                                        "id": "b4d37902-b16d-47b5-b4e9-4f5c3a1c0a0e",
+                                        "name": "Nouveau job",
+                                        "description": "Ceci est une description",
+                                        "countJobInstance": 0,
+                                        "versions": [
+                                            {
+                                                "number": 1,
+                                                "creationDate": "2022-06-21T11:02:39.175Z",
+                                                "releaseNote": "",
+                                                "runtimeVersion": "docker",
+                                                "commandLine": null,
+                                                "packageInfo": null,
+                                                "dockerInfo": {
+                                                    "image": "hello-world",
+                                                    "dockerCredentialsId": null
+                                                },
+                                                "extraTechnology": null,
+                                                "isCurrent": true,
+                                                "isMajor": false,
+                                                "creator": "estiam_g03_cristian.tirche",
+                                                "exposedPorts": [],
+                                                "storagePaths": []
+                                            }
+                                        ],
+                                        "category": "Extraction",
+                                        "technology": {
+                                            "id": "d6ba711b-4ae1-4c19-96a4-3c7d35039f3f"
+                                        },
+                                        "isScheduled": false,
+                                        "cronScheduling": null,
+                                        "scheduleStatus": null,
+                                        "scheduleTimezone": "UTC",
+                                        "alerting": null,
+                                        "isStreaming": false,
+                                        "creationDate": "2022-06-21T11:02:39.175Z",
+                                        "migrationStatus": null,
+                                        "migrationProjectId": null,
+                                        "isDeletable": true,
+                                        "pipelines": [],
+                                        "graphPipelines": [
+                                            {
+                                                "id": "1b4ec21f-52de-4952-bcdb-37de2cd57147",
+                                                "name": "Pipeline test"
+                                            }
+                                        ],
+                                        "storageSizeInMB": null,
+                                        "doesUseGPU": false,
+                                        "resources": {
+                                            "cpu": null,
+                                            "memory": null,
+                                            "gpu": null
+                                        }
+                                    },
+                                    "position": {
+                                        "x": 896,
+                                        "y": 362
+                                    },
+                                    "nextNodes": []
+                                },
+                                {
+                                    "id": "fe1dbed0-f151-11ec-9de2-2531d994978b",
+                                    "job": {
+                                        "id": "b4d37902-b16d-47b5-b4e9-4f5c3a1c0a0e",
+                                        "name": "Nouveau job",
+                                        "description": "Ceci est une description",
+                                        "countJobInstance": 0,
+                                        "versions": [
+                                            {
+                                                "number": 1,
+                                                "creationDate": "2022-06-21T11:02:39.175Z",
+                                                "releaseNote": "",
+                                                "runtimeVersion": "docker",
+                                                "commandLine": null,
+                                                "packageInfo": null,
+                                                "dockerInfo": {
+                                                    "image": "hello-world",
+                                                    "dockerCredentialsId": null
+                                                },
+                                                "extraTechnology": null,
+                                                "isCurrent": true,
+                                                "isMajor": false,
+                                                "creator": "estiam_g03_cristian.tirche",
+                                                "exposedPorts": [],
+                                                "storagePaths": []
+                                            }
+                                        ],
+                                        "category": "Extraction",
+                                        "technology": {
+                                            "id": "d6ba711b-4ae1-4c19-96a4-3c7d35039f3f"
+                                        },
+                                        "isScheduled": false,
+                                        "cronScheduling": null,
+                                        "scheduleStatus": null,
+                                        "scheduleTimezone": "UTC",
+                                        "alerting": null,
+                                        "isStreaming": false,
+                                        "creationDate": "2022-06-21T11:02:39.175Z",
+                                        "migrationStatus": null,
+                                        "migrationProjectId": null,
+                                        "isDeletable": true,
+                                        "pipelines": [],
+                                        "graphPipelines": [
+                                            {
+                                                "id": "1b4ec21f-52de-4952-bcdb-37de2cd57147",
+                                                "name": "Pipeline test"
+                                            }
+                                        ],
+                                        "storageSizeInMB": null,
+                                        "doesUseGPU": false,
+                                        "resources": {
+                                            "cpu": null,
+                                            "memory": null,
+                                            "gpu": null
+                                        }
+                                    },
+                                    "position": {
+                                        "x": 896,
+                                        "y": 474
+                                    },
+                                    "nextNodes": []
+                                }
+                            ],
+                            "conditionNodes": []
+                        },
+                        "creationDate": "2022-06-21T11:06:27.554Z",
+                        "creator": "estiam_g03_cristian.tirche",
+                        "isCurrent": true,
+                        "isMajor": false
+                    }
+                ],
+                "project": {
+                    "id": "b736ceab-de22-4493-8d17-9669fdc1f78c",
+                    "name": "[ESTIAM] G03 Hackathon"
+                },
+                "creationDate": "2022-06-21T11:06:27.554Z",
+                "creator": "estiam_g03_cristian.tirche",
+                "isScheduled": false,
+                "cronScheduling": null,
+                "scheduleStatus": null,
+                "scheduleTimezone": "UTC",
+                "isLegacyPipeline": false
+            }
+        ]
+    },
     {
       "id": "dc8bef98-e177-4ea6-bbc0-de7b55942a21",
       "name": "test",
       "creator": "estiam_g03_cristian.tirche",
       "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took.",
       "jobsCount": 0,
-      "status": "READY"
+      "status": "READY",
+      "apps": [],
+        "volumes": [],
+        "pipelines": [
+            {
+                "id": "1b4ec21f-52de-4952-bcdb-37de2cd57147",
+                "name": "Pipeline test",
+                "description": "Ceci est une description de la pipeline",
+                "alerting": null,
+                "pipelineInstanceCount": 0,
+                "instances": [],
+                "versions": [
+                    {
+                        "number": 1,
+                        "releaseNote": null,
+                        "graph": {
+                            "jobNodes": [
+                                {
+                                    "id": "fcd3d9b0-f151-11ec-9de2-2531d994978b",
+                                    "job": {
+                                        "id": "b4d37902-b16d-47b5-b4e9-4f5c3a1c0a0e",
+                                        "name": "Nouveau job",
+                                        "description": "Ceci est une description",
+                                        "countJobInstance": 0,
+                                        "versions": [
+                                            {
+                                                "number": 1,
+                                                "creationDate": "2022-06-21T11:02:39.175Z",
+                                                "releaseNote": "",
+                                                "runtimeVersion": "docker",
+                                                "commandLine": null,
+                                                "packageInfo": null,
+                                                "dockerInfo": {
+                                                    "image": "hello-world",
+                                                    "dockerCredentialsId": null
+                                                },
+                                                "extraTechnology": null,
+                                                "isCurrent": true,
+                                                "isMajor": false,
+                                                "creator": "estiam_g03_cristian.tirche",
+                                                "exposedPorts": [],
+                                                "storagePaths": []
+                                            }
+                                        ],
+                                        "category": "Extraction",
+                                        "technology": {
+                                            "id": "d6ba711b-4ae1-4c19-96a4-3c7d35039f3f"
+                                        },
+                                        "isScheduled": false,
+                                        "cronScheduling": null,
+                                        "scheduleStatus": null,
+                                        "scheduleTimezone": "UTC",
+                                        "alerting": null,
+                                        "isStreaming": false,
+                                        "creationDate": "2022-06-21T11:02:39.175Z",
+                                        "migrationStatus": null,
+                                        "migrationProjectId": null,
+                                        "isDeletable": true,
+                                        "pipelines": [],
+                                        "graphPipelines": [
+                                            {
+                                                "id": "1b4ec21f-52de-4952-bcdb-37de2cd57147",
+                                                "name": "Pipeline test"
+                                            }
+                                        ],
+                                        "storageSizeInMB": null,
+                                        "doesUseGPU": false,
+                                        "resources": {
+                                            "cpu": null,
+                                            "memory": null,
+                                            "gpu": null
+                                        }
+                                    },
+                                    "position": {
+                                        "x": 896,
+                                        "y": 362
+                                    },
+                                    "nextNodes": []
+                                },
+                                {
+                                    "id": "fe1dbed0-f151-11ec-9de2-2531d994978b",
+                                    "job": {
+                                        "id": "b4d37902-b16d-47b5-b4e9-4f5c3a1c0a0e",
+                                        "name": "Nouveau job",
+                                        "description": "Ceci est une description",
+                                        "countJobInstance": 0,
+                                        "versions": [
+                                            {
+                                                "number": 1,
+                                                "creationDate": "2022-06-21T11:02:39.175Z",
+                                                "releaseNote": "",
+                                                "runtimeVersion": "docker",
+                                                "commandLine": null,
+                                                "packageInfo": null,
+                                                "dockerInfo": {
+                                                    "image": "hello-world",
+                                                    "dockerCredentialsId": null
+                                                },
+                                                "extraTechnology": null,
+                                                "isCurrent": true,
+                                                "isMajor": false,
+                                                "creator": "estiam_g03_cristian.tirche",
+                                                "exposedPorts": [],
+                                                "storagePaths": []
+                                            }
+                                        ],
+                                        "category": "Extraction",
+                                        "technology": {
+                                            "id": "d6ba711b-4ae1-4c19-96a4-3c7d35039f3f"
+                                        },
+                                        "isScheduled": false,
+                                        "cronScheduling": null,
+                                        "scheduleStatus": null,
+                                        "scheduleTimezone": "UTC",
+                                        "alerting": null,
+                                        "isStreaming": false,
+                                        "creationDate": "2022-06-21T11:02:39.175Z",
+                                        "migrationStatus": null,
+                                        "migrationProjectId": null,
+                                        "isDeletable": true,
+                                        "pipelines": [],
+                                        "graphPipelines": [
+                                            {
+                                                "id": "1b4ec21f-52de-4952-bcdb-37de2cd57147",
+                                                "name": "Pipeline test"
+                                            }
+                                        ],
+                                        "storageSizeInMB": null,
+                                        "doesUseGPU": false,
+                                        "resources": {
+                                            "cpu": null,
+                                            "memory": null,
+                                            "gpu": null
+                                        }
+                                    },
+                                    "position": {
+                                        "x": 896,
+                                        "y": 474
+                                    },
+                                    "nextNodes": []
+                                }
+                            ],
+                            "conditionNodes": []
+                        },
+                        "creationDate": "2022-06-21T11:06:27.554Z",
+                        "creator": "estiam_g03_cristian.tirche",
+                        "isCurrent": true,
+                        "isMajor": false
+                    }
+                ],
+                "project": {
+                    "id": "b736ceab-de22-4493-8d17-9669fdc1f78c",
+                    "name": "[ESTIAM] G03 Hackathon"
+                },
+                "creationDate": "2022-06-21T11:06:27.554Z",
+                "creator": "estiam_g03_cristian.tirche",
+                "isScheduled": false,
+                "cronScheduling": null,
+                "scheduleStatus": null,
+                "scheduleTimezone": "UTC",
+                "isLegacyPipeline": false
+            }
+        ]
     },
     {
       "id": "dc8bef98-e177-4ea6-bbc0-de7b55942a26",
@@ -14,7 +688,169 @@
       "creator": "estiam_g03_cristian.tirche",
       "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took.",
       "jobsCount": 0,
-      "status": "READY"
+      "status": "READY",
+      "apps": [],
+        "volumes": [],
+        "pipelines": [
+            {
+                "id": "1b4ec21f-52de-4952-bcdb-37de2cd57147",
+                "name": "Pipeline test",
+                "description": "Ceci est une description de la pipeline",
+                "alerting": null,
+                "pipelineInstanceCount": 0,
+                "instances": [],
+                "versions": [
+                    {
+                        "number": 1,
+                        "releaseNote": null,
+                        "graph": {
+                            "jobNodes": [
+                                {
+                                    "id": "fcd3d9b0-f151-11ec-9de2-2531d994978b",
+                                    "job": {
+                                        "id": "b4d37902-b16d-47b5-b4e9-4f5c3a1c0a0e",
+                                        "name": "Nouveau job",
+                                        "description": "Ceci est une description",
+                                        "countJobInstance": 0,
+                                        "versions": [
+                                            {
+                                                "number": 1,
+                                                "creationDate": "2022-06-21T11:02:39.175Z",
+                                                "releaseNote": "",
+                                                "runtimeVersion": "docker",
+                                                "commandLine": null,
+                                                "packageInfo": null,
+                                                "dockerInfo": {
+                                                    "image": "hello-world",
+                                                    "dockerCredentialsId": null
+                                                },
+                                                "extraTechnology": null,
+                                                "isCurrent": true,
+                                                "isMajor": false,
+                                                "creator": "estiam_g03_cristian.tirche",
+                                                "exposedPorts": [],
+                                                "storagePaths": []
+                                            }
+                                        ],
+                                        "category": "Extraction",
+                                        "technology": {
+                                            "id": "d6ba711b-4ae1-4c19-96a4-3c7d35039f3f"
+                                        },
+                                        "isScheduled": false,
+                                        "cronScheduling": null,
+                                        "scheduleStatus": null,
+                                        "scheduleTimezone": "UTC",
+                                        "alerting": null,
+                                        "isStreaming": false,
+                                        "creationDate": "2022-06-21T11:02:39.175Z",
+                                        "migrationStatus": null,
+                                        "migrationProjectId": null,
+                                        "isDeletable": true,
+                                        "pipelines": [],
+                                        "graphPipelines": [
+                                            {
+                                                "id": "1b4ec21f-52de-4952-bcdb-37de2cd57147",
+                                                "name": "Pipeline test"
+                                            }
+                                        ],
+                                        "storageSizeInMB": null,
+                                        "doesUseGPU": false,
+                                        "resources": {
+                                            "cpu": null,
+                                            "memory": null,
+                                            "gpu": null
+                                        }
+                                    },
+                                    "position": {
+                                        "x": 896,
+                                        "y": 362
+                                    },
+                                    "nextNodes": []
+                                },
+                                {
+                                    "id": "fe1dbed0-f151-11ec-9de2-2531d994978b",
+                                    "job": {
+                                        "id": "b4d37902-b16d-47b5-b4e9-4f5c3a1c0a0e",
+                                        "name": "Nouveau job",
+                                        "description": "Ceci est une description",
+                                        "countJobInstance": 0,
+                                        "versions": [
+                                            {
+                                                "number": 1,
+                                                "creationDate": "2022-06-21T11:02:39.175Z",
+                                                "releaseNote": "",
+                                                "runtimeVersion": "docker",
+                                                "commandLine": null,
+                                                "packageInfo": null,
+                                                "dockerInfo": {
+                                                    "image": "hello-world",
+                                                    "dockerCredentialsId": null
+                                                },
+                                                "extraTechnology": null,
+                                                "isCurrent": true,
+                                                "isMajor": false,
+                                                "creator": "estiam_g03_cristian.tirche",
+                                                "exposedPorts": [],
+                                                "storagePaths": []
+                                            }
+                                        ],
+                                        "category": "Extraction",
+                                        "technology": {
+                                            "id": "d6ba711b-4ae1-4c19-96a4-3c7d35039f3f"
+                                        },
+                                        "isScheduled": false,
+                                        "cronScheduling": null,
+                                        "scheduleStatus": null,
+                                        "scheduleTimezone": "UTC",
+                                        "alerting": null,
+                                        "isStreaming": false,
+                                        "creationDate": "2022-06-21T11:02:39.175Z",
+                                        "migrationStatus": null,
+                                        "migrationProjectId": null,
+                                        "isDeletable": true,
+                                        "pipelines": [],
+                                        "graphPipelines": [
+                                            {
+                                                "id": "1b4ec21f-52de-4952-bcdb-37de2cd57147",
+                                                "name": "Pipeline test"
+                                            }
+                                        ],
+                                        "storageSizeInMB": null,
+                                        "doesUseGPU": false,
+                                        "resources": {
+                                            "cpu": null,
+                                            "memory": null,
+                                            "gpu": null
+                                        }
+                                    },
+                                    "position": {
+                                        "x": 896,
+                                        "y": 474
+                                    },
+                                    "nextNodes": []
+                                }
+                            ],
+                            "conditionNodes": []
+                        },
+                        "creationDate": "2022-06-21T11:06:27.554Z",
+                        "creator": "estiam_g03_cristian.tirche",
+                        "isCurrent": true,
+                        "isMajor": false
+                    }
+                ],
+                "project": {
+                    "id": "b736ceab-de22-4493-8d17-9669fdc1f78c",
+                    "name": "[ESTIAM] G03 Hackathon"
+                },
+                "creationDate": "2022-06-21T11:06:27.554Z",
+                "creator": "estiam_g03_cristian.tirche",
+                "isScheduled": false,
+                "cronScheduling": null,
+                "scheduleStatus": null,
+                "scheduleTimezone": "UTC",
+                "isLegacyPipeline": false
+            }
+        ]
     },
     {
       "id": "dc8bef98-e177-4ea6-bbc0-de7b55942a25",
@@ -22,7 +858,169 @@
       "creator": "estiam_g03_cristian.tirche",
       "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took.",
       "jobsCount": 0,
-      "status": "READY"
+      "status": "READY",
+      "apps": [],
+        "volumes": [],
+        "pipelines": [
+            {
+                "id": "1b4ec21f-52de-4952-bcdb-37de2cd57147",
+                "name": "Pipeline test",
+                "description": "Ceci est une description de la pipeline",
+                "alerting": null,
+                "pipelineInstanceCount": 0,
+                "instances": [],
+                "versions": [
+                    {
+                        "number": 1,
+                        "releaseNote": null,
+                        "graph": {
+                            "jobNodes": [
+                                {
+                                    "id": "fcd3d9b0-f151-11ec-9de2-2531d994978b",
+                                    "job": {
+                                        "id": "b4d37902-b16d-47b5-b4e9-4f5c3a1c0a0e",
+                                        "name": "Nouveau job",
+                                        "description": "Ceci est une description",
+                                        "countJobInstance": 0,
+                                        "versions": [
+                                            {
+                                                "number": 1,
+                                                "creationDate": "2022-06-21T11:02:39.175Z",
+                                                "releaseNote": "",
+                                                "runtimeVersion": "docker",
+                                                "commandLine": null,
+                                                "packageInfo": null,
+                                                "dockerInfo": {
+                                                    "image": "hello-world",
+                                                    "dockerCredentialsId": null
+                                                },
+                                                "extraTechnology": null,
+                                                "isCurrent": true,
+                                                "isMajor": false,
+                                                "creator": "estiam_g03_cristian.tirche",
+                                                "exposedPorts": [],
+                                                "storagePaths": []
+                                            }
+                                        ],
+                                        "category": "Extraction",
+                                        "technology": {
+                                            "id": "d6ba711b-4ae1-4c19-96a4-3c7d35039f3f"
+                                        },
+                                        "isScheduled": false,
+                                        "cronScheduling": null,
+                                        "scheduleStatus": null,
+                                        "scheduleTimezone": "UTC",
+                                        "alerting": null,
+                                        "isStreaming": false,
+                                        "creationDate": "2022-06-21T11:02:39.175Z",
+                                        "migrationStatus": null,
+                                        "migrationProjectId": null,
+                                        "isDeletable": true,
+                                        "pipelines": [],
+                                        "graphPipelines": [
+                                            {
+                                                "id": "1b4ec21f-52de-4952-bcdb-37de2cd57147",
+                                                "name": "Pipeline test"
+                                            }
+                                        ],
+                                        "storageSizeInMB": null,
+                                        "doesUseGPU": false,
+                                        "resources": {
+                                            "cpu": null,
+                                            "memory": null,
+                                            "gpu": null
+                                        }
+                                    },
+                                    "position": {
+                                        "x": 896,
+                                        "y": 362
+                                    },
+                                    "nextNodes": []
+                                },
+                                {
+                                    "id": "fe1dbed0-f151-11ec-9de2-2531d994978b",
+                                    "job": {
+                                        "id": "b4d37902-b16d-47b5-b4e9-4f5c3a1c0a0e",
+                                        "name": "Nouveau job",
+                                        "description": "Ceci est une description",
+                                        "countJobInstance": 0,
+                                        "versions": [
+                                            {
+                                                "number": 1,
+                                                "creationDate": "2022-06-21T11:02:39.175Z",
+                                                "releaseNote": "",
+                                                "runtimeVersion": "docker",
+                                                "commandLine": null,
+                                                "packageInfo": null,
+                                                "dockerInfo": {
+                                                    "image": "hello-world",
+                                                    "dockerCredentialsId": null
+                                                },
+                                                "extraTechnology": null,
+                                                "isCurrent": true,
+                                                "isMajor": false,
+                                                "creator": "estiam_g03_cristian.tirche",
+                                                "exposedPorts": [],
+                                                "storagePaths": []
+                                            }
+                                        ],
+                                        "category": "Extraction",
+                                        "technology": {
+                                            "id": "d6ba711b-4ae1-4c19-96a4-3c7d35039f3f"
+                                        },
+                                        "isScheduled": false,
+                                        "cronScheduling": null,
+                                        "scheduleStatus": null,
+                                        "scheduleTimezone": "UTC",
+                                        "alerting": null,
+                                        "isStreaming": false,
+                                        "creationDate": "2022-06-21T11:02:39.175Z",
+                                        "migrationStatus": null,
+                                        "migrationProjectId": null,
+                                        "isDeletable": true,
+                                        "pipelines": [],
+                                        "graphPipelines": [
+                                            {
+                                                "id": "1b4ec21f-52de-4952-bcdb-37de2cd57147",
+                                                "name": "Pipeline test"
+                                            }
+                                        ],
+                                        "storageSizeInMB": null,
+                                        "doesUseGPU": false,
+                                        "resources": {
+                                            "cpu": null,
+                                            "memory": null,
+                                            "gpu": null
+                                        }
+                                    },
+                                    "position": {
+                                        "x": 896,
+                                        "y": 474
+                                    },
+                                    "nextNodes": []
+                                }
+                            ],
+                            "conditionNodes": []
+                        },
+                        "creationDate": "2022-06-21T11:06:27.554Z",
+                        "creator": "estiam_g03_cristian.tirche",
+                        "isCurrent": true,
+                        "isMajor": false
+                    }
+                ],
+                "project": {
+                    "id": "b736ceab-de22-4493-8d17-9669fdc1f78c",
+                    "name": "[ESTIAM] G03 Hackathon"
+                },
+                "creationDate": "2022-06-21T11:06:27.554Z",
+                "creator": "estiam_g03_cristian.tirche",
+                "isScheduled": false,
+                "cronScheduling": null,
+                "scheduleStatus": null,
+                "scheduleTimezone": "UTC",
+                "isLegacyPipeline": false
+            }
+        ]
     },
     {
       "id": "dc8bef98-e177-4ea6-bbc0-de7b55942a24",
@@ -30,7 +1028,171 @@
       "creator": "estiam_g03_cristian.tirche",
       "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took.",
       "jobsCount": 0,
-      "status": "READY"
-    }
-  ]
+      "status": "READY",
+      "apps": [],
+        "volumes": [],
+        "pipelines": [
+            {
+                "id": "1b4ec21f-52de-4952-bcdb-37de2cd57147",
+                "name": "Pipeline test",
+                "description": "Ceci est une description de la pipeline",
+                "alerting": null,
+                "pipelineInstanceCount": 0,
+                "instances": [],
+                "versions": [
+                    {
+                        "number": 1,
+                        "releaseNote": null,
+                        "graph": {
+                            "jobNodes": [
+                                {
+                                    "id": "fcd3d9b0-f151-11ec-9de2-2531d994978b",
+                                    "job": {
+                                        "id": "b4d37902-b16d-47b5-b4e9-4f5c3a1c0a0e",
+                                        "name": "Nouveau job",
+                                        "description": "Ceci est une description",
+                                        "countJobInstance": 0,
+                                        "versions": [
+                                            {
+                                                "number": 1,
+                                                "creationDate": "2022-06-21T11:02:39.175Z",
+                                                "releaseNote": "",
+                                                "runtimeVersion": "docker",
+                                                "commandLine": null,
+                                                "packageInfo": null,
+                                                "dockerInfo": {
+                                                    "image": "hello-world",
+                                                    "dockerCredentialsId": null
+                                                },
+                                                "extraTechnology": null,
+                                                "isCurrent": true,
+                                                "isMajor": false,
+                                                "creator": "estiam_g03_cristian.tirche",
+                                                "exposedPorts": [],
+                                                "storagePaths": []
+                                            }
+                                        ],
+                                        "category": "Extraction",
+                                        "technology": {
+                                            "id": "d6ba711b-4ae1-4c19-96a4-3c7d35039f3f"
+                                        },
+                                        "isScheduled": false,
+                                        "cronScheduling": null,
+                                        "scheduleStatus": null,
+                                        "scheduleTimezone": "UTC",
+                                        "alerting": null,
+                                        "isStreaming": false,
+                                        "creationDate": "2022-06-21T11:02:39.175Z",
+                                        "migrationStatus": null,
+                                        "migrationProjectId": null,
+                                        "isDeletable": true,
+                                        "pipelines": [],
+                                        "graphPipelines": [
+                                            {
+                                                "id": "1b4ec21f-52de-4952-bcdb-37de2cd57147",
+                                                "name": "Pipeline test"
+                                            }
+                                        ],
+                                        "storageSizeInMB": null,
+                                        "doesUseGPU": false,
+                                        "resources": {
+                                            "cpu": null,
+                                            "memory": null,
+                                            "gpu": null
+                                        }
+                                    },
+                                    "position": {
+                                        "x": 896,
+                                        "y": 362
+                                    },
+                                    "nextNodes": []
+                                },
+                                {
+                                    "id": "fe1dbed0-f151-11ec-9de2-2531d994978b",
+                                    "job": {
+                                        "id": "b4d37902-b16d-47b5-b4e9-4f5c3a1c0a0e",
+                                        "name": "Nouveau job",
+                                        "description": "Ceci est une description",
+                                        "countJobInstance": 0,
+                                        "versions": [
+                                            {
+                                                "number": 1,
+                                                "creationDate": "2022-06-21T11:02:39.175Z",
+                                                "releaseNote": "",
+                                                "runtimeVersion": "docker",
+                                                "commandLine": null,
+                                                "packageInfo": null,
+                                                "dockerInfo": {
+                                                    "image": "hello-world",
+                                                    "dockerCredentialsId": null
+                                                },
+                                                "extraTechnology": null,
+                                                "isCurrent": true,
+                                                "isMajor": false,
+                                                "creator": "estiam_g03_cristian.tirche",
+                                                "exposedPorts": [],
+                                                "storagePaths": []
+                                            }
+                                        ],
+                                        "category": "Extraction",
+                                        "technology": {
+                                            "id": "d6ba711b-4ae1-4c19-96a4-3c7d35039f3f"
+                                        },
+                                        "isScheduled": false,
+                                        "cronScheduling": null,
+                                        "scheduleStatus": null,
+                                        "scheduleTimezone": "UTC",
+                                        "alerting": null,
+                                        "isStreaming": false,
+                                        "creationDate": "2022-06-21T11:02:39.175Z",
+                                        "migrationStatus": null,
+                                        "migrationProjectId": null,
+                                        "isDeletable": true,
+                                        "pipelines": [],
+                                        "graphPipelines": [
+                                            {
+                                                "id": "1b4ec21f-52de-4952-bcdb-37de2cd57147",
+                                                "name": "Pipeline test"
+                                            }
+                                        ],
+                                        "storageSizeInMB": null,
+                                        "doesUseGPU": false,
+                                        "resources": {
+                                            "cpu": null,
+                                            "memory": null,
+                                            "gpu": null
+                                        }
+                                    },
+                                    "position": {
+                                        "x": 896,
+                                        "y": 474
+                                    },
+                                    "nextNodes": []
+                                }
+                            ],
+                            "conditionNodes": []
+                        },
+                        "creationDate": "2022-06-21T11:06:27.554Z",
+                        "creator": "estiam_g03_cristian.tirche",
+                        "isCurrent": true,
+                        "isMajor": false
+                    }
+                ],
+                "project": {
+                    "id": "b736ceab-de22-4493-8d17-9669fdc1f78c",
+                    "name": "[ESTIAM] G03 Hackathon"
+                },
+                "creationDate": "2022-06-21T11:06:27.554Z",
+                "creator": "estiam_g03_cristian.tirche",
+                "isScheduled": false,
+                "cronScheduling": null,
+                "scheduleStatus": null,
+                "scheduleTimezone": "UTC",
+                "isLegacyPipeline": false
+            }
+        ]
+      }
+    ]
+  }
+
 }

@@ -3,6 +3,7 @@
 .errorContainer {
     padding: 4px;
     border: 0px solid rgb(247, 255, 136);
+    background-color: #fff;
 }
 
 .errorContainer .errorBorder {
@@ -19,7 +20,9 @@
     margin: auto;
     padding: 4px;
     border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid #000;
     border-radius: 50%;
+    color: #000;
 
     text-align: center;
     font-family: monospace;
@@ -31,6 +34,7 @@
     height: fit-content;
     margin: auto;
     padding: 8px 4px;
+    color: #000;
     border: 0px solid #fff;
     font-family: monospace;
     font-size: 11px;

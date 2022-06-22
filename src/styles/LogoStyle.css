@@ -1,0 +1,11 @@
+
+.DrawerBottom {
+    border: 0px solid black;
+    text-align: center;
+}
+.DrawerBottom .logoImg {
+    border: 0px solid black;
+    width: 60%;
+    max-width: 100%;
+    height: auto;
+}

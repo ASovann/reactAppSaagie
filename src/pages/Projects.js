@@ -9,40 +9,46 @@ const useStyles = makeStyles({
     flexDirection:"column",
   },
   wrapper:{
-    display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)"
+    display: "flex",
+    flexDirection:"row",
+    flexWrap:"wrap",
+    alignContent:"space-around",
+    justifyContent:"space-between"
   },
   card:{
-    margin:20
+    margin:20,
+    maxWidth:"360px"
   }
 
 })
 
-export default function Notes() {
-  const [notes, setNotes] = useState([]);
+export default function Data() {
+  const [project, setProject] = useState([]);
   const classes = useStyles()
 
   useEffect(() => {
-    fetch('http://localhost:8000/notes')
+    fetch('http://localhost:8000/data')
       .then(res => res.json())
-      .then(data => setNotes(data))
+      .then(data => setProject(data.projects))
+      
+      
   }, [])
-
+  
   const handleDelete = async (id) => {
-    await fetch('http://localhost:8000/notes/' + id, {
+    await fetch('http://localhost:8000/data/' + id, {
       method: 'DELETE'
     })
-    const newNotes = notes.filter(note => note.id !== id)
-    setNotes(newNotes)
+    const newData = project.filter(data => data.id !== id)
+    setProject(newData)
   }
 
 
   return (
     <Container className={classes.root}>
       <div className={classes.wrapper}>
-        {notes.map(note => (
-          <div key={note.id} className={classes.card}>
-            <ProjectCard note={note} handleDelete={handleDelete} />
+        {project.map( data => (
+          <div key={data.id} className={classes.card}>
+            <ProjectCard data={data} handleDelete={handleDelete} />
           </div>
         ))}
       </div>

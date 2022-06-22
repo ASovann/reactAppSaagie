@@ -23,5 +23,8 @@
 .loadingImg {
     width: 280px;
     width: 40%;
+    max-width: 260px;
     height: auto;
+    border: 0px solid blue;
+    border-radius: 50%;
 }
