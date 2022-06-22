@@ -90,7 +90,7 @@ export default function Layout({ children }) {
 
   // Define the update method for loading
   const [loading, setLoading] = useState(true)
-  const [erroring, setErroring] = useState(true)
+  const [erroring, setErroring] = useState(false)
   const [errMess, setErrMess] = useState("")
   
   
@@ -121,8 +121,8 @@ export default function Layout({ children }) {
     },
   ];
 
-  setTimeout(() => {setLoading(false)}, 3000)
-  setTimeout(() => {setErroring(false)}, 3000)
+  setTimeout(() => {setLoading(false)}, 800)
+  // setTimeout(() => {setErroring(false)}, 500)
   // Display "Loading.. " message to the screen while waiting for the api return to load
   //if (loading) return <LoadingComponent/>
   //if (erroring) return <ErrorComponent errMess={errMess} />
