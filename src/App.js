@@ -26,17 +26,16 @@ const theme = createMuiTheme({
 })
 
 function App() {
-  const [noToken, setNoToken] = useState(false)
+  const [noToken, setNoToken] = useState(localStorage.getItem("token") === null)
 
   useEffect(() => {
-    setNoToken(localStorage.getItem(noToken) === null)
-    console.log(noToken)
     if(noToken){
+      console.log("ok cool");
       axios.post('http://localhost:4000/api/signin', {"login":"ESTIAM_G03_cristian.tirche","password":"PasDePanneau123"})
       .then(res => localStorage.setItem("token", res.data.token))
+    } else {
+      setNoToken(false);
     }
-    
-      
   }, [noToken])
 
   return (
