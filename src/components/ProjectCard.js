@@ -4,7 +4,7 @@ import CardHeader from '@material-ui/core/CardHeader'
 import CardContent from '@material-ui/core/CardContent'
 import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
-import DeleteOutlined from '@material-ui/icons/DeleteOutlined'
+import { CloudDownload } from '@material-ui/icons'
 import { makeStyles } from '@material-ui/core'
 import Avatar from '@material-ui/core/Avatar'
 import { yellow, green, pink, blue } from '@material-ui/core/colors'
@@ -82,10 +82,19 @@ export default function ProjectCard({ data, handleDelete }) {
 
   const duplicateButton = () =>{
     console.log("test:", data.id)
-    axios.get('http://localhost:4000/api/duplicate/' + data.id)
-    .then(res => {
-      return res.data.data
-  })
+      axios.get('http://localhost:4000/api/duplicate/' + data.id)
+      .then(res => {
+        return res.data.data
+    })
+  }
+  const downloadButton = (id) => {
+    axios.get('http://localhost:4000/api/project/' + id).then((project) => {
+      var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({project: project.data.data}));
+      var dlAnchorElem = document.createElement('a');
+      dlAnchorElem.setAttribute("href",     dataStr     );
+      dlAnchorElem.setAttribute("download", "backup.saagiebackup");
+      dlAnchorElem.click();
+    })
   }
 
   return (
@@ -98,8 +107,8 @@ export default function ProjectCard({ data, handleDelete }) {
             </Avatar>
           }
           action={
-            <IconButton onClick={() => handleDelete(data.id)}>
-              <DeleteOutlined />
+            <IconButton onClick={() => downloadButton(data.id)}>
+              <CloudDownload />
             </IconButton>
           }
           title={<Typography className={classes.cardHeaderTitle}>{data.name}</Typography>}
