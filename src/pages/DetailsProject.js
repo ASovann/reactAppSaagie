@@ -8,7 +8,8 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import { Divider } from '@mui/material';
-import axios from 'axios'
+import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
 
 const useStyles = makeStyles({
     main:{
@@ -33,24 +34,24 @@ const Pipelines = (props) => {
         //console.log("key: ",key, " value: ", value)
         if(typeof value === 'object'){
             console.log("key: ",key, " value: ", value)
-            elements.push(<Pipelines key={getRandomInt(1000)} pipeline={value}/>)
-            elements.push(<span key={getRandomInt(1000)}> {key} : {value !== null ? value.toString() : <span>No {key}</span>}</span>)
+            elements.push(<Pipelines key={uuidv4()} pipeline={value}/>)
+            elements.push(<span key={uuidv4()}> {key} : {value !== null ? value.toString() : <span>No {key}</span>}</span>)
         }else if(typeof value === 'array'){
             if (value[0] && typeof value[0] === "object") {
-                elements.push(...value.map((val) => (<Pipelines key={getRandomInt(1000)} pipeline={val}/>)))
+                elements.push(...value.map((val) => (<Pipelines key={uuidv4()} pipeline={val}/>)))
             } else {
-                elements.push(<span key={getRandomInt(1000)}>{key} : {value}</span>)
+                elements.push(<span key={uuidv4()}>{key} : {value}</span>)
             }
         
         } else {
             //console.log("key: ",key, " value: ", value)
-            elements.push(<span key={getRandomInt(1000)}> {key} : {value !== '' ? value.toString() : <span>No {key}</span>}</span>)
+            elements.push(<span key={uuidv4()}> {key} : {value !== '' ? value.toString() : <span>No {key}</span>}</span>)
         }
         
     }
     return(
         
-        <>{elements.map((element) => (<div key={getRandomInt(1000)}>{element}<br/></div>))}</>
+        <>{elements.map((element) => (<div key={uuidv4()}>{element}<br/></div>))}</>
         
     )
 }
@@ -61,21 +62,21 @@ const Jobs = (props) => {
     for(let key in job){
         let value = job[key]
         if(typeof value === 'object'){
-            elements.push(<Jobs key={getRandomInt(1000)} job={value}/>)
-            elements.push(<span key={getRandomInt(1000)}> {key} : {value !== null ? value.toString() : <span>No {key}</span>}</span>)
+            elements.push(<Jobs key={uuidv4()} job={value}/>)
+            elements.push(<span key={uuidv4()}> {key} : {value !== null ? value.toString() : <span>No {key}</span>}</span>)
         }else if(typeof value === 'array'){
             if (value[0] && typeof value[0] === "object") {
-                elements.push(...value.map((val) => (<Jobs key={getRandomInt(1000)} pipeline={val}/>)))
+                elements.push(...value.map((val) => (<Jobs key={uuidv4()} pipeline={val}/>)))
             } else {
-                elements.push(<span key={getRandomInt(1000)}>{key} : {value !== '' ? value.toString() : <span>No {key}</span>}</span>)
+                elements.push(<span key={uuidv4()}>{key} : {value !== '' ? value.toString() : <span>No {key}</span>}</span>)
             }
         } else {
-            elements.push(<span key={getRandomInt(1000)}> {key} : {value !== '' ? value.toString() : <span>No {key}</span>}</span>)
+            elements.push(<span key={uuidv4()}> {key} : {value !== '' ? value.toString() : <span>No {key}</span>}</span>)
         }
     }
     
     return(
-        <>{elements.map((element) => (<div key={getRandomInt(1000)}>{element}<br/></div>))}</>
+        <>{elements.map((element) => (<div key={uuidv4()}>{element}<br/></div>))}</>
         
     )
 }
@@ -86,21 +87,21 @@ const Apps = (props) => {
     for(let key in app){
         let value = app[key]
         if(typeof value === 'object'){
-            elements.push(<Apps key={getRandomInt(1000)} app={value}/>)
-            elements.push(<span key={getRandomInt(1000)}> {key} : {value !== null ? value.toString() : <span>No {key}</span>}</span>)
+            elements.push(<Apps key={uuidv4()} app={value}/>)
+            elements.push(<span key={uuidv4()}> {key} : {value !== null ? value.toString() : <span>No {key}</span>}</span>)
         }else if(typeof value === 'array'){
             if (value[0] && typeof value[0] === "object") {
-                elements.push(...value.map((val) => (<Apps key={getRandomInt(1000)} pipeline={val}/>)))
+                elements.push(...value.map((val) => (<Apps key={uuidv4()} pipeline={val}/>)))
             } else {
-                elements.push(<span key={getRandomInt(1000)}>{key} : {value !== '' ? value.toString() : <span>No {key}</span>}</span>)
+                elements.push(<span key={uuidv4()}>{key} : {value !== '' ? value.toString() : <span>No {key}</span>}</span>)
             }
         } else {
-            elements.push(<span key={getRandomInt(1000)}> {key} : {value !== '' ? value.toString() : <span>No {key}</span>}</span>)
+            elements.push(<span key={uuidv4()}> {key} : {value !== '' ? value.toString() : <span>No {key}</span>}</span>)
         }
     }
     
     return(
-        <>{elements.map((element) => (<div key={getRandomInt(1000)}>{element}<br/></div>))}</>
+        <>{elements.map((element) => (<div key={uuidv4()}>{element}<br/></div>))}</>
         
     )
 }
@@ -150,14 +151,14 @@ export default function DetailsProject() {
                     </TabList>
                 </Box>
                 <TabPanel value="1">
-                    {jobs.map((job) => (<div key={getRandomInt(1000)}><Jobs job={job}/><hr/></div>))}
+                    {jobs.map((job) => (<div key={uuidv4()}><Jobs job={job}/><hr/></div>))}
                 </TabPanel>
                 <TabPanel value="2">
                     
-                    {pipelines.map((pipeline) => (<div key={getRandomInt(1000)}><Pipelines pipeline={pipeline}/><hr/></div>))}
+                    {pipelines.map((pipeline) => (<div key={uuidv4()}><Pipelines pipeline={pipeline}/><hr/></div>))}
                 </TabPanel>
                 <TabPanel value="3">
-                    {apps.map((app) => (<div key={getRandomInt(1000)}><Apps app={app}/><hr/></div>))}
+                    {apps.map((app) => (<div key={uuidv4()}><Apps app={app}/><hr/></div>))}
                 </TabPanel>
             </TabContext>
         </Box>
