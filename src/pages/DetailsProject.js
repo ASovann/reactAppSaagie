@@ -28,23 +28,28 @@ function getRandomInt(max) {
 const Pipelines = (props) => {
     const { pipeline } = props;
     const elements = [];
-
     for(let key in pipeline){
         let value = pipeline[key]
+        //console.log("key: ",key, " value: ", value)
         if(typeof value === 'object'){
+            console.log("key: ",key, " value: ", value)
             elements.push(<Pipelines key={getRandomInt(1000)} pipeline={value}/>)
-            
+            elements.push(<span key={getRandomInt(1000)}> {key} : {value !== null ? value.toString() : <span>No {key}</span>}</span>)
         }else if(typeof value === 'array'){
             if (value[0] && typeof value[0] === "object") {
                 elements.push(...value.map((val) => (<Pipelines key={getRandomInt(1000)} pipeline={val}/>)))
             } else {
-                elements.push(<span key={getRandomInt(1000)}>{key} : {value !== '' ? value.toString() : <span>No {key}</span>}</span>)
+                elements.push(<span key={getRandomInt(1000)}>{key} : {value}</span>)
             }
+        
         } else {
+            //console.log("key: ",key, " value: ", value)
             elements.push(<span key={getRandomInt(1000)}> {key} : {value !== '' ? value.toString() : <span>No {key}</span>}</span>)
         }
+        
     }
     return(
+        
         <>{elements.map((element) => (<div key={getRandomInt(1000)}>{element}<br/></div>))}</>
         
     )
@@ -57,7 +62,7 @@ const Jobs = (props) => {
         let value = job[key]
         if(typeof value === 'object'){
             elements.push(<Jobs key={getRandomInt(1000)} job={value}/>)
-            
+            elements.push(<span key={getRandomInt(1000)}> {key} : {value !== null ? value.toString() : <span>No {key}</span>}</span>)
         }else if(typeof value === 'array'){
             if (value[0] && typeof value[0] === "object") {
                 elements.push(...value.map((val) => (<Jobs key={getRandomInt(1000)} pipeline={val}/>)))
@@ -82,7 +87,7 @@ const Apps = (props) => {
         let value = app[key]
         if(typeof value === 'object'){
             elements.push(<Apps key={getRandomInt(1000)} app={value}/>)
-            
+            elements.push(<span key={getRandomInt(1000)}> {key} : {value !== null ? value.toString() : <span>No {key}</span>}</span>)
         }else if(typeof value === 'array'){
             if (value[0] && typeof value[0] === "object") {
                 elements.push(...value.map((val) => (<Apps key={getRandomInt(1000)} pipeline={val}/>)))
